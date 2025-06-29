@@ -1,0 +1,444 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 기본 요소 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background: transparent;
+}
+
+/* 헤더 스타일 */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid #e9ecef;
+  height: 4rem;
+}
+
+nav {
+  max-width: 1728px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+/* 로고 */
+nav > a:first-child {
+  font-size: 1.3125rem;
+  font-weight: bold;
+  color: #343a40;
+  letter-spacing: -0.8px;
+}
+
+/* 네비게이션 링크 */
+nav > a:not(:first-child):not(:last-child) {
+  color: #495057;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-left: 2rem;
+  transition: color 0.125s ease-in;
+}
+
+nav > a:not(:first-child):not(:last-child):hover {
+  color: #212529;
+}
+
+/* 버튼 스타일 */
+nav button,
+.btn-primary {
+  background: #12b886;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.125s ease-in;
+}
+
+nav button:hover,
+.btn-primary:hover {
+  background: #20c997;
+}
+
+.btn-secondary {
+  background: #868e96;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  transition: background 0.125s ease-in;
+}
+
+.btn-secondary:hover {
+  background: #6c757d;
+}
+
+/* 메인 컨테이너 */
+.container {
+  max-width: 1728px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 폼 스타일 */
+form {
+  max-width: 400px;
+  margin: 5rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+}
+
+form h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #343a40;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+form input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: border-color 0.125s ease-in;
+}
+
+form input:focus {
+  border-color: #12b886;
+}
+
+form input::placeholder {
+  color: #adb5bd;
+}
+
+form button {
+  width: 100%;
+  background: #12b886;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.125s ease-in;
+}
+
+form button:hover {
+  background: #20c997;
+}
+
+/* 포스트 리스트 */
+.post-list {
+  margin-top: 2rem;
+}
+
+.post-list h2 {
+  color: #343a40;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.post-list ul {
+  list-style: none;
+}
+
+.post-list li {
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease-in, transform 0.25s ease-in;
+}
+
+.post-list li:hover {
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.09);
+  transform: translateY(-8px);
+}
+
+.post-list li > div {
+  padding: 1rem;
+}
+
+.post-list a {
+  color: #212529;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.post-list a:hover {
+  color: #12b886;
+}
+
+.post-author {
+  color: #868e96;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.post-actions button {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  transition: all 0.125s ease-in;
+}
+
+.post-actions button:hover {
+  background: #e9ecef;
+  color: #343a40;
+}
+
+.post-actions button:first-child:hover {
+  background: #12b886;
+  color: white;
+}
+
+.post-actions button:last-child:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* 포스트 상세 */
+article {
+  max-width: 768px;
+  margin: 3rem auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+}
+
+article h1 {
+  color: #212529;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  word-break: keep-all;
+}
+
+article p:first-of-type {
+  color: #868e96;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+article div:last-child {
+  color: #212529;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 글쓰기/수정 폼 */
+.write-form {
+  max-width: 768px;
+  margin: 2rem auto;
+  background: white;
+  min-height: calc(100vh - 4rem);
+}
+
+.write-form input[type="text"] {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  font-size: 2.75rem;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #f1f3f5;
+  background: transparent;
+}
+
+.write-form input[type="text"]::placeholder {
+  color: #adb5bd;
+}
+
+.write-form textarea {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  border: none;
+  background: transparent;
+  resize: none;
+  min-height: 500px;
+}
+
+.write-form textarea::placeholder {
+  color: #adb5bd;
+}
+
+.write-form button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #12b886;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.write-form button:hover {
+  background: #20c997;
+}
+
+/* 빈 상태 */
+.empty-state {
+  text-align: center;
+  color: #868e96;
+  font-size: 1.125rem;
+  margin: 4rem 0;
+}
+
+/* 로딩 상태 */
+.loading {
+  text-align: center;
+  color: #868e96;
+  font-size: 1.125rem;
+  margin: 4rem 0;
+}
+
+/* 반응형 */
+@media (max-width: 1056px) {
+  nav {
+    padding: 0 1rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
+  }
+  
+  nav > a:not(:first-child):not(:last-child) {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+  
+  form {
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+  
+  article {
+    margin: 1rem auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  article h1 {
+    font-size: 2rem;
+  }
+  
+  .write-form input[type="text"] {
+    padding: 1rem 1.5rem;
+    font-size: 1.75rem;
+  }
+  
+  .write-form textarea {
+    padding: 1rem 1.5rem;
+  }
+  
+  .write-form button {
+    position: static;
+    width: 100%;
+    margin: 1rem 1.5rem;
+    width: calc(100% - 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem;
+  }
+  
+  nav > a:not(:first-child):not(:last-child) {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  form {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  article {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  article h1 {
+    font-size: 1.5rem;
+  }
+  
+  .post-list li > div {
+    padding: 0.75rem;
+  }
+  
+  .post-list a {
+    font-size: 1rem;
+  }
+}
